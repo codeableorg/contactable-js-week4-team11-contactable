@@ -12,8 +12,8 @@ export default function Signup(parentElement){
           <input type="password" name="password" placeholder="password"/> 
         </form>
       </section>       
-      <footer class="options">
-        <div>
+      <footer>
+        <div class="options">
           <a href="">Login</a>
           <a href="">Create Account</a>
         </div>

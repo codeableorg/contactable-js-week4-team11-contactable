@@ -12,28 +12,6 @@ footer {
   background-color: var(--background-white);
 }
 
-.title {
-  font-family: Roboto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 28px;
-  color: var(--nero);
-  padding: 14px 0 14px 10px;
-  margin: 0;
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: var(--border);
-}
-form {
-  width: 92%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 0;
-}
-
 .inputs input {
   width: 68%;
   padding: 8px 0;
@@ -62,19 +40,4 @@ form {
   border-width: 1px 0 0 0;
   border-style: solid;
   border-color: var(--border);
-}
-
-.options a {
-  padding: 4px;
-  text-decoration: none;
-  color: var(--blue);
-  margin: 0 18px 0 0;
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 20px;
-}
-
-.options a:active {
-  color: var(--blue);
 }

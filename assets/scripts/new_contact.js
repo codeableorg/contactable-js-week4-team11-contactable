@@ -16,7 +16,7 @@ export default function NewContact(){
               <a href="">Save</a>
             </div>
           </footer>
-`
+`;
 }
 
 

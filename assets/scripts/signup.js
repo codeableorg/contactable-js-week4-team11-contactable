@@ -4,7 +4,7 @@ export default function Signup(parentElement){
     render: function () {
       const html = `
       <header>
-        <h2 class="title">Signup</h2>
+        <h2>Signup</h2>
       </header>
       <section class="inputs">
         <form>

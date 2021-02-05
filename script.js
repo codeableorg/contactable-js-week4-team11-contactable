@@ -1,9 +1,8 @@
-import Login from "./assets/scripts/login.js";
+import Signup from "./assets/scripts/signup.js";
 
 function init() {
-  const login = Login(".js-content");
-  login.render();
-  login.addFormSubmitListener(".js-content");
+  const signup = Signup(".js-content");
+  signup.render();
 }
 
 init();

@@ -1,9 +1,10 @@
-import { login } from "./sessions_service.js";
+// import { login } from "./sessions_service.js";
 import STORE from "./store.js";
+import { addClickEventsToLinks } from "./links.js";
 
 export default function Login(parentElement)
 {
-  // returns singup object, method render()
+  // returns login object, method render()
   return {
     parent: document.querySelector(parentElement),
     render: function()
@@ -21,13 +22,14 @@ export default function Login(parentElement)
       </section>
       <footer>
         <div class="options">
-          <a href="" id="#js-login-link">Login</a>
-          <a href="" id="#js-signup-link">Create Account</a>
+          <a href="javascript:void(0)" id="js-login-link">Login</a>
+          <a href="javascript:void(0)" id="js-signup-link">Create Account</a>
         </div>
       </footer>
       `;
       this.parent.innerHTML = html;
       this.addFormSubmitListener();
+      addClickEventsToLinks();
     },
     addFormSubmitListener: function()
     {

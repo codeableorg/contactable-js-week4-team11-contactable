@@ -1,5 +1,6 @@
 import { signup } from "./sessions_service.js";
 import STORE from "./store.js";
+import { addClickEventsToLinks } from "./links.js"
 
 export default function Signup(parentElement)
 {
@@ -21,13 +22,14 @@ export default function Signup(parentElement)
       </section>
       <footer>
         <div class="options">
-          <a href="" id="#js-login-link">Login</a>
-          <a href="" id="#js-signup-link">Create Account</a>
+          <a href="javascript:void(0)" id="js-login-link">Login</a>
+          <a href="javascript:void(0)" id="js-signup-link">Create Account</a>
         </div>
       </footer>
       `;
       this.parent.innerHTML = html;
       this.addFormSubmitListener();
+      addClickEventsToLinks();
     },
     addFormSubmitListener: function()
     {

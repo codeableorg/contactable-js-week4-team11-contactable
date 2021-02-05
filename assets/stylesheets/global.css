@@ -87,3 +87,18 @@ footer {
   width: 365px;
   padding: 0 10px;
 }
+select{
+  width: 68%;
+  padding: 8px 0;
+  border-width: 0 0 1px 0;
+  border-color: var(--silver);
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--silver);
+  margin: 0 0 27px 0;
+  outline: none;
+  background: var(--background-white);
+}

@@ -21,7 +21,24 @@ h2 {
   font-weight: normal;
   font-size: 20px;
   line-height: 28px;
-  display: flex;
-  align-items: center;
   color: var(--nero);
+}
+
+label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--silver);
+}
+
+a {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: right;
+  color: var(--blue);
 }

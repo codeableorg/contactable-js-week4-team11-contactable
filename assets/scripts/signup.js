@@ -3,7 +3,7 @@ import STORE from "./store.js";
 
 export default function Signup(parentElement)
 {
-  // returns singup object, methods render() and addFormSubmitListener()
+  // returns singup object, method render()
   return {
     parent: document.querySelector(parentElement),
     render: function()
@@ -21,8 +21,8 @@ export default function Signup(parentElement)
       </section>
       <footer>
         <div class="options">
-          <a href="">Login</a>
-          <a href="">Create Account</a>
+          <a href="" id="#js-login-link">Login</a>
+          <a href="" id="#js-signup-link">Create Account</a>
         </div>
       </footer>
       `;

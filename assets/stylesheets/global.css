@@ -25,8 +25,11 @@ section {
 }
 
 header,
-section,
-footer {
+section {
   width: 365px;
   padding: 0 10px;
+}
+
+footer {
+  width: 385px;
 }

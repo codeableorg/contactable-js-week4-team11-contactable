@@ -1,21 +1,35 @@
-export default function Login(){
+export default function Login(parentElement){
   return {
-    render: function(){
-      return `
+    parent: document.querySelector(parentElement),
+    render: function () {
+      const html = `
       <header>
-      <h2>Login</h2>
+        <h2 class="title">Login</h2>
       </header>
-      <section>
+      <section class="inputs">
         <form>
-          <input type="password" name="email">
-          <input type="password" name="password">
+          <input type="email" name="email" placeholder="email"/>         
+          <input type="password" name="password" placeholder="password"/> 
         </form>
-      </section>
-      <footer>
-      <a href="signup">Sign Up</a>
-      <a href="login">Login</a>
+      </section>       
+      <footer class="options">
+        <div>
+          <a href="">Sign Up</a>
+          <a href="">Login</a>
+        </div>
       </footer>
-      `
-    }
-  }
+      `;
+      this.parent.innerHTML = html;
+    },
+    // addFormSubmitListener: function () {
+    //   this.parent.addEventListener("submit", (e) => {
+    //     const form = this.parent.querySelector(".js-login-form");
+    //     if (form === e.target) {
+    //       e.preventDefault();
+    //       const { email, password } = form;
+    //       console.log(email.value, password.value);
+    //     }
+    //   });
+    // },
+  };
 }

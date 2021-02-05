@@ -1,5 +1,7 @@
 function addEventListeners() {}
 
-function init() {}
-
+function init() {
+  const login = Login();
+  login.render();
+}
 init();

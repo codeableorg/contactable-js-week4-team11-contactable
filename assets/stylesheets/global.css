@@ -2,6 +2,7 @@
   --nero: #262626;
   --black: #000000;
   --silver: #bfbfbf;
+  --background-white: #ffffff;
   --background-contact-color: #f5f5f5;
   --border-color: #e0e0e0;
   --blue: #2962ff;
@@ -24,13 +25,11 @@ h2 {
   color: var(--nero);
 }
 
-label {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 20px;
-  color: var(--silver);
+input {
+  background: var(--background-white);
+  border: var(--border-color);
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 a {

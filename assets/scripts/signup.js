@@ -7,11 +7,12 @@ export default function Signup(parentElement){
         <h2>Signup</h2>
       </header>
       <section class="inputs">
-        <form>
-          <input type="email" name="email" placeholder="email"/>         
-          <input type="password" name="password" placeholder="password"/> 
+        <form id="js-signup-form">
+          <input type="email" name="email" placeholder="email"/>
+          <input type="password" name="password" placeholder="password"/>
+          <input type="submit" hidden>
         </form>
-      </section>       
+      </section>
       <footer>
         <div class="options">
           <a href="">Login</a>
@@ -20,6 +21,11 @@ export default function Signup(parentElement){
       </footer>
       `;
       this.parent.innerHTML = html;
+      const signup_form = document.querySelector('#js-signup-form');
+      signup_form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('Sending signup data');
+      });
     },
   };
 }

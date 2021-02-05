@@ -8,3 +8,12 @@ export const signup = (email, password) =>
     },
     body: JSON.stringify( { email, password} ),
   });
+
+export const login = (email, password) =>
+  apiFetch(`${BASE_URL}/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify( { email, password} ),
+  });

@@ -1,0 +1,21 @@
+.contact{
+  display: flex;
+  width: 320px;
+  height: 56px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 16.5px;
+  justify-content: space-between;
+}
+.contact__info{
+  display: flex;
+  align-items: center;
+}
+.contact__star{
+  text-align: right;
+}
+.contact__name{
+  margin:0px;
+  padding-left: 32px;
+
+}

@@ -1,5 +1,6 @@
 :root {
   --nero: #262626;
+  --nero2: #595959;
   --black: #000000;
   --silver: #bfbfbf;
   --background-white: #ffffff;
@@ -30,7 +31,25 @@ h2 {
   border-style: solid;
   border-color: var(--border);
 }
-
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--nero2);
+  padding: 14px 0 14px 10px;
+  margin: 0;
+}
+h4{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 15px 0 14px 10px;
+  margin: 0;
+}
 form {
   width: 92%;
   display: flex;
@@ -67,4 +86,19 @@ section,
 footer {
   width: 365px;
   padding: 0 10px;
+}
+select{
+  width: 68%;
+  padding: 8px 0;
+  border-width: 0 0 1px 0;
+  border-color: var(--silver);
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--silver);
+  margin: 0 0 27px 0;
+  outline: none;
+  background: var(--background-white);
 }

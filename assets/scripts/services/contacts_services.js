@@ -25,3 +25,13 @@ export const deleteContact = (contactId) =>
       Authorization: `Token token=${sessionStorage.getItem("token")}`,
     },
   });
+export const updateContact = (contactId, name, phone, email, relation) =>
+  apiFetch(`${BASE_URL}/contacts/${contactId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Token token=${sessionStorage.getItem("token")}`,
+    },
+    body: JSON.stringify({ name, phone, email, relation }),
+  });
+

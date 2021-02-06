@@ -31,4 +31,4 @@ const addClickEventsToSignup = function(){
     signup.render();
   });
 }
-export { addClickEventsToLogin, addClickEventsToSignup }
+export { addClickEventsToLogin, addClickEventsToSignup}

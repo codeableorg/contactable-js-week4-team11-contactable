@@ -19,11 +19,11 @@ export default function Login(parentElement)
           <input type="email" name="email" placeholder="email"/>
           <input type="password" name="password" placeholder="password"/>
           <input type="submit" hidden>
-          </form>
+        </form>
           </section>
           <footer>
           <div class="options">
-          <a href="" id="js-login-submit">Login</a>
+          <a href="javascript:void(0)" id="js-login-submit">Login</a>
           <a href="javascript:void(0)" id="js-signup-link">Create Account</a>
         </div>
       </footer>
@@ -33,31 +33,34 @@ export default function Login(parentElement)
       addClickEventsToSignup();
     },
     addFormSubmitListener: function(){
-      const content = document.querySelector(".js-content");
-      content.addEventListener('click', async (e) => {
-        let loginLink = content.querySelector("#js-login-submit")
-        let form = document.querySelector("#js-login-form")
-        if ( loginLink === e.target ) {
-          e.preventDefault();
-          const { email, password } = form;
-          console.log({email, password})
-          try
-          {
-            const data = await login(email.value, password.value);
-            STORE.user = data;
-            sessionStorage.setItem("token", data.token)
-            if (data.token){
-              let main = Main(".js-content");
-              main.render()
-            }
-          }
-          catch (e)
-          {
-            alert(e.message);
+      const form = document.querySelector("#js-login-form");
+      const loginSubmit = document.querySelector("#js-login-submit")
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const { email, password } = form;
+        try
+        {
+          const data = await login(email.value, password.value);
+          STORE.user = data;
+          sessionStorage.setItem("token", data.token)
+          if (data.token){
+            let main = Main(".js-content");
+            main.render()
           }
         }
+        catch (e)
+        {
+          alert(e.message);
+        }
+      });
+      // an addiotional event listener, clickin on 'login' will trigger the form submit event
+      let submitEvent = new Event('submit', {
+                        'bubbles'    : true,
+                        'cancelable' : true
+                        });
+      loginSubmit.addEventListener('click', (e) => {
+        form.dispatchEvent(submitEvent);
       });
     },
   };
 }
-

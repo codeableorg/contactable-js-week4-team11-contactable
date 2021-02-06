@@ -20,12 +20,15 @@ export default async function Contacts() {
       `);
   return  `
         <header>
-          <h3> Contactable</h3>
-          <a class="js-new-contact" href="#create-contact">Create Contact</a>
+          <div style="display: flex; justify-content: space-between; align-items: center">
+            <h3> Contactable</h3>
+            <a class="js-logout" href="#logout">Logout</a>
+          </div>
           <h4>CONTACTS(${sortContacts.length})</h4>
         </header>
-        <section>
-           ${contactsList.join("")}
-          <a class="js-logout" href="#logout">Logout</a>
+        <section style="position: relative;">
+          ${contactsList.join("")}
+           <a class="js-new-contact" style="position: absolute; bottom: 20px; right: 20px;"
+              href="#create-contact">Create Contact</a>
         </section>`;
 }

@@ -1,7 +1,7 @@
 import { login } from "./services/sessions_service.js";
 import STORE from "./store.js";
 import Main from "./main.js"
-import { addClickEventsToLinks } from "./links.js";
+import { addClickEventsToSignup } from "./links.js";
 
 export default function Login(parentElement)
 {
@@ -30,7 +30,7 @@ export default function Login(parentElement)
       `;
       this.parent.innerHTML = html;
       this.addFormSubmitListener();
-      addClickEventsToLinks();
+      addClickEventsToSignup();
     },
     addFormSubmitListener: function(){
       const content = document.querySelector(".js-content");

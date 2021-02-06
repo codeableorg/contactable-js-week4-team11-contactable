@@ -33,40 +33,40 @@ export default function Main(parentElement){
         });
       }
     },
-    contactFormSubmitListener: function () {
-      const form = this.parent.querySelector(".js-NewContact");
-      if (form) {
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const { name, number, email, relation } = form;
-          try {
-            if (!name.value || number.length < 9) {
-              throw new Error("El campo Note no test´ña llenado correctamente");
-            }
-            const newContact = await createContanewContact(
-              name.value,
-              number.value,
-              email.value,
-              relation.value
-            );
-            const contact = STORE.contacts;
-            STORE[this.selectedOption] = categories.map((_category) => {
-              if (_category.id === categoryId) {
-                return {
-                  ..._category,
-                  transactions: [..._category.transactions, newTransaction],
-                };
-              }
-              return _category;
-            });
-            this.selectedCategory = categoryId;
-            this.render();
-          } catch (e) {
-            console.log(e);
-            alert(e);
-          }
-        });
-      }
-    },
+    // contactFormSubmitListener: function () {
+    //   const form = this.parent.querySelector(".js-NewContact");
+    //   if (form) {
+    //     form.addEventListener("submit", async (e) => {
+    //       e.preventDefault();
+    //       const { name, number, email, relation } = form;
+    //       try {
+    //         if (!name.value || number.length < 9) {
+    //           throw new Error("El campo Note no test´ña llenado correctamente");
+    //         }
+    //         const newContact = await createContanewContact(
+    //           name.value,
+    //           number.value,
+    //           email.value,
+    //           relation.value
+    //         );
+    //         const contact = STORE.contacts;
+    //         STORE[this.selectedOption] = categories.map((_category) => {
+    //           if (_category.id === categoryId) {
+    //             return {
+    //               ..._category,
+    //               transactions: [..._category.transactions, newTransaction],
+    //             };
+    //           }
+    //           return _category;
+    //         });
+    //         this.selectedCategory = categoryId;
+    //         this.render();
+    //       } catch (e) {
+    //         console.log(e);
+    //         alert(e);
+    //       }
+    //     });
+    //   }
+    // },
   }
 }

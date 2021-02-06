@@ -1,3 +1,5 @@
+import EditContact from "./edit_contact";
+
 export default function ContactDetail(parentElement) {
   return {
     parent: document.querySelector(parentElement),
@@ -23,11 +25,19 @@ export default function ContactDetail(parentElement) {
         <div class="options">
           <a href="">Back</a>
           <a href="">Delete</a>
-          <a href="">Edit</a>
+          <a id="js-edit-form" href="">Edit</a>
         </div>
       </footer>
       `;
       this.parent.innerHTML = html;
+    },
+    EditContactClickListener: function () {
+      const editContact = this.parent.querySelector(".js-edit-form");
+      if (editContact) {
+        editContact.addEventListener("click", (e) => {
+          this.parent.innerHTML = EditContact();
+        });
+      }
     },
   };
 }

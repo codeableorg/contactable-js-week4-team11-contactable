@@ -11,7 +11,7 @@ async function init() {
 
   if (sessionStorage.getItem("token")) {
     STORE.contacts
-    main.render();
+    await main.render(); // render() is async due to contacts loading
   } else {
     login.render();
   }

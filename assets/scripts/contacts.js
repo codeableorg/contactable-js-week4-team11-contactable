@@ -1,7 +1,9 @@
 import NewContact from "./new_contact.js";
 import STORE from "./store.js";
+import { listContacts } from "./services/contacts_services.js"
 
-export default function Contacts() {
+export default async function Contacts() {
+  STORE.contacts = await listContacts();
   const sortContacts = STORE.contacts;
   const contactsList = sortContacts.map(contact => `
         <div data-id="${contact.id}"class="contacts__box">

@@ -1,5 +1,6 @@
 import { login } from "./services/sessions_service.js";
 import STORE from "./store.js";
+import Main from "./main.js"
 import { addClickEventsToLinks } from "./links.js";
 
 export default function Login(parentElement)

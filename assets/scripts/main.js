@@ -1,6 +1,8 @@
 import Contacts from "./contacts.js";
-import NewContact from "./new_contact.js";
+import { logout } from "./services/sessions_service.js";
+import Login from "./login.js";
 import STORE from "./store.js";
+import NewContact from "./new_contact.js";
 
 
 export default function Main(parentElement){
@@ -26,7 +28,6 @@ export default function Main(parentElement){
         logoutBtn.addEventListener("click", async () => {
           await logout();
           sessionStorage.removeItem("token");
-          STORE.user = {};
           const login = Login(parentElement);
           login.render();
         });

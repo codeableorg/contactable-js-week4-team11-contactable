@@ -1,4 +1,4 @@
-export default function Login(parentElement) {
+export default function ContactDetail(parentElement) {
   return {
     parent: document.querySelector(parentElement),
     render: function()
@@ -9,7 +9,7 @@ export default function Login(parentElement) {
         <a>Logout</a>
       </header>
       <section class="inputs">
-        <img src="./assets/img/default.png" alt="">
+        <img src="./assets/img/default.png" alt="image-contact">
         <p class="contact__name">${contact.name}</p>
         <p>Friends</p>
         <div contact__detail>
@@ -28,7 +28,6 @@ export default function Login(parentElement) {
       </footer>
       `;
       this.parent.innerHTML = html;
-      this.addFormSubmitListener();
     },
   };
 }

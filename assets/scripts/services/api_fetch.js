@@ -10,7 +10,7 @@ async function apiFetch(...args) {
   if(response.status !== 204) {
     return await response.json();
   }
-  return "response.text";
+  return response.text;
 }
 
 export { BASE_URL, apiFetch };

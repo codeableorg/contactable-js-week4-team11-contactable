@@ -1,3 +1,6 @@
-const STORE = {}
+const STORE = {
+  user: {},
+  contacts: [],
+};
 
 export default STORE;

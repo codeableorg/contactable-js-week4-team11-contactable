@@ -1,4 +1,4 @@
-import { signup } from "./sessions_service.js";
+import { signup } from "./services/sessions_service.js";
 import STORE from "./store.js";
 import { addClickEventsToLinks } from "./links.js"
 

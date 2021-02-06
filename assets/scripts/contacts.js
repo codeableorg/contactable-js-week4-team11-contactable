@@ -6,7 +6,7 @@ export default async function Contacts() {
   STORE.contacts = await listContacts();
   const sortContacts = STORE.contacts;
   const contactsList = sortContacts.map(contact => `
-        <div data-id="${contact.id}"class="contacts__box">
+        <div id="idContact" data-id="${contact.id}"class="contacts__box">
           <div class="contact">
             <div class="contact__info">
               <img src="./assets/img/default.png" alt="">

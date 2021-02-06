@@ -1,6 +1,5 @@
 import Signup from "./signup.js";
 import Login from "./login.js";
-import EditContact from "./edit_contact.js";
 
 // const addClickEventsToLinks = function(){
 //   const signup = Signup(".js-content");

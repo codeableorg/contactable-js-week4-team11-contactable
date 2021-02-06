@@ -1,4 +1,5 @@
-import EditContact from "./edit_contact";
+import EditContact from "./edit_contact.js";
+import { updateContact } from "./services/contacts_services.js";
 
 export default function ContactDetail(parentElement) {
   return {
@@ -23,21 +24,51 @@ export default function ContactDetail(parentElement) {
       </section>
       <footer>
         <div class="options">
-          <a href="">Back</a>
+          <a href="">Back</a>updateUser
           <a href="">Delete</a>
           <a id="js-edit-form" href="">Edit</a>
         </div>
       </footer>
       `;
       this.parent.innerHTML = html;
+      this.editContactClickListener();
     },
-    EditContactClickListener: function () {
+    editContactClickListener: function () {
       const editContact = this.parent.querySelector(".js-edit-form");
       if (editContact) {
         editContact.addEventListener("click", (e) => {
           this.parent.innerHTML = EditContact();
         });
       }
+    },
+    updateFormSubmitListener: function () {
+      const content = this.parent.querySelector(".js-content");
+      content.addEventListener("click", async (e) => {
+        const submit = content.querySelector("#js-update-contact");
+        const form = content.querySelector(".js-editContact")
+        if (submit === e.target) {
+          e.preventDefault();
+          const contactID= content.closest("#idContact").dataset.id;
+          const { name, phone, email, relation } = form;
+          try {
+            const updatedContact = await editContact(
+              contactID,
+              name.value,
+              phone.value,
+              email.value,
+              relation.value
+            );
+            STORE.contacts = STORE.contacts.map((contact)=>{
+              if (contact.id === updatedContact.id){
+                return updatedNote;
+              }
+            });
+            this.render();
+          } catch (e) {
+            alert(e.message);
+          }
+        }
+      });
     },
   };
 }

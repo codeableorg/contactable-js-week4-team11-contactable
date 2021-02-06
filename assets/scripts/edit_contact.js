@@ -20,7 +20,7 @@ export default function EditContact(){
         <footer>
           <div  class="options">
             <a href="">Cancel</a>
-            <a href="">Save</a>
+            <a id="js-update-contact" href="">Save</a>
           </div>
         </footer>`;
 }

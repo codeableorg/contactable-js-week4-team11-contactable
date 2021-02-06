@@ -9,12 +9,10 @@ const addClickEventsToLinks = function(){
   const loginLink = document.querySelector('#js-login-link');
 
   signupLink.addEventListener('click', (e) => {
-    console.log("signup-page loaded")
     signup.render();
   });
 
   loginLink.addEventListener('click', (e) => {
-    console.log("login-page loaded")
     login.render()
   });
 }

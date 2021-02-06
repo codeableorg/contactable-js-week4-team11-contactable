@@ -8,7 +8,7 @@ export default function Contacts() {
           <div class="contact">
             <div class="contact__info">
               <img src="./assets/img/default.png" alt="">
-              <p class="contact__name">${contac.name}</p>
+              <p class="contact__name">${contact.name}</p>
             </div>
             <div class="contact__star">
               <i class="material-icons">star_border</i>
@@ -19,9 +19,11 @@ export default function Contacts() {
   return  `
         <header>
           <h3> Contactable</h3>
+          <a class="js-new-contact" href="#create-contact">Create Contact</a>
           <h4>CONTACTS(${sortContacts.length})</h4>
         </header>
         <section>
            ${contactsList.join("")}
+          <a class="js-logout" href="#logout">Logout</a>
         </section>`;
 }

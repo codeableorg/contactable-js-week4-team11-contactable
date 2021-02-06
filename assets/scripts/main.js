@@ -1,27 +1,71 @@
+import Contacts from "./contacts.js";
+import NewContact from "./new_contact.js";
+import STORE from "./store.js";
+
+
 export default function Main(parentElement){
   return{
     parent: document.querySelector(parentElement),
     render: function(){
-      // let html = `
-      // <header>
-      //   <h3> Contactable</h3>
-      //   <h4>CONTACTS(10)</h4>
-      // </header>
-      // <section>
-      //   <div class="contacts__box">
-      //     <div class="contact">
-      //       <div class="contact__info">
-      //         <img src="./assets/img/default.png" alt="">
-      //         <p class="contact__name">Contacto1</p>
-      //       </div>
-      //       <div class="contact__star">
-      //         <i class="material-icons">star_border</i>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </section>
-      // `;
+      let html = Contacts();
     this.parent.innerHTML = html;
-    }
+    this.logoutClickListener();
+    this.newContactClickListener();
+    },
+    newContactClickListener: function () {
+      const newContact = this.parent.querySelector(".js-new-contact");
+      if (newContact) {
+        newContact.addEventListener("click", (e) => {
+          this.parent.innerHTML = NewContact();
+        });
+      }
+    },
+    logoutClickListener: function () {
+      const logoutBtn = this.parent.querySelector(".js-logout");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", async () => {
+          await logout();
+          sessionStorage.removeItem("token");
+          STORE.user = {};
+          const login = Login(parentElement);
+          login.render();
+        });
+      }
+    },
+    contactFormSubmitListener: function () {
+      const form = this.parent.querySelector(".js-NewContact");
+      if (form) {
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const { name, number, email, relation } = form;
+          try {
+            if (!name.value || number.length < 9) {
+              throw new Error("El campo Note no test´ña llenado correctamente");
+            }
+            const newContact = await createContanewContact(
+              name.value,
+              number.value,
+              email.value,
+              relation.value
+            );
+            const contact = STORE.contacts;
+            STORE[this.selectedOption] = categories.map((_category) => {
+              if (_category.id === categoryId) {
+                return {
+                  ..._category,
+                  transactions: [..._category.transactions, newTransaction],
+                };
+              }
+              return _category;
+            });
+            this.selectedCategory = categoryId;
+            this.render();
+          } catch (e) {
+            console.log(e);
+            alert(e);
+          }
+        });
+      }
+    },
   }
 }

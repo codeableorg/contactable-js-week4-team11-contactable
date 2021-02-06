@@ -4,7 +4,7 @@ export default function NewContact(){
           <h2>Create new Contact</h2>
         </header>
         <section class="inputs">
-          <form class="newContact-js">
+          <form class="js-NewContact">
             <input type="text" name="name" placeholder="Name"/>         
             <input type="number" name="email" placeholder="Number"/>         
             <input type="email" name="email" placeholder="Email"/>         

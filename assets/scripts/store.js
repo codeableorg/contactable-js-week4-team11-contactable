@@ -1,5 +1,6 @@
 const STORE = {
-  contacts: []
+  user: {},
+  contacts: [],
 };
 
 export default STORE;

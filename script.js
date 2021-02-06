@@ -1,8 +1,20 @@
-import Signup from "./assets/scripts/signup.js";
+import Login from "./assets/scripts/login.js";
+import Main from "./assets/scripts/main.js";
+import STORE from "./assets/scripts/store.js";
 
-function init() {
-  const signup = Signup(".js-content");
-  signup.render();
+
+async function init() {
+  const login = Login(".js-content");
+  const main = Main(".js-content");
+
+  if (sessionStorage.getItem("token")) {
+    STORE.user = await showUser();
+    STORE.contacts
+    main.render();
+  } else {
+    login.render();
+  }
 }
+
 
 init();

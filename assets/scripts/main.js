@@ -8,11 +8,11 @@ import NewContact from "./new_contact.js";
 export default function Main(parentElement){
   return{
     parent: document.querySelector(parentElement),
-    render: function(){
-      let html = Contacts();
-    this.parent.innerHTML = html;
-    this.logoutClickListener();
-    this.newContactClickListener();
+    render: async function(){
+      let html = await Contacts();
+      this.parent.innerHTML = html;
+      this.logoutClickListener();
+      this.newContactClickListener();
     },
     newContactClickListener: function () {
       const newContact = this.parent.querySelector(".js-new-contact");

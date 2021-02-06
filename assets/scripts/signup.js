@@ -1,6 +1,6 @@
 import { signup } from "./services/sessions_service.js";
 import STORE from "./store.js";
-import { addClickEventsToLinks } from "./links.js"
+import { addClickEventsToLogin } from "./links.js"
 
 export default function Signup(parentElement)
 {
@@ -29,7 +29,7 @@ export default function Signup(parentElement)
       `;
       this.parent.innerHTML = html;
       this.addFormSubmitListener();
-      addClickEventsToLinks();
+      addClickEventsToLogin();
     },
     addFormSubmitListener: function()
     {

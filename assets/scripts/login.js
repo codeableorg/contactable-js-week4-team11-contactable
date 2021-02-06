@@ -1,7 +1,7 @@
 import { login } from "./services/sessions_service.js";
 import STORE from "./store.js";
 import Main from "./main.js"
-import { addClickEventsToLinks } from "./links.js";
+import { addClickEventsToSignup } from "./links.js";
 
 export default function Login(parentElement)
 {
@@ -19,24 +19,28 @@ export default function Login(parentElement)
           <input type="email" name="email" placeholder="email"/>
           <input type="password" name="password" placeholder="password"/>
           <input type="submit" hidden>
-          <button>Login</a>
-        </form>
-      </section>
-      <footer>
-        <div class="options">
-          <button href="" id="js-signup-link">Create Account</a>
+          </form>
+          </section>
+          <footer>
+          <div class="options">
+          <a href="" id="js-login-submit">Login</a>
+          <a href="javascript:void(0)" id="js-signup-link">Create Account</a>
         </div>
       </footer>
       `;
       this.parent.innerHTML = html;
       this.addFormSubmitListener();
+      addClickEventsToSignup();
     },
     addFormSubmitListener: function(){
-      const form = document.querySelector('#js-login-form');
-      form.addEventListener('submit', async (e) => {
-        if ( form === e.target ) {
+      const content = document.querySelector(".js-content");
+      content.addEventListener('click', async (e) => {
+        let loginLink = content.querySelector("#js-login-submit")
+        let form = document.querySelector("#js-login-form")
+        if ( loginLink === e.target ) {
           e.preventDefault();
           const { email, password } = form;
+          console.log({email, password})
           try
           {
             const data = await login(email.value, password.value);
@@ -56,3 +60,4 @@ export default function Login(parentElement)
     },
   };
 }
+

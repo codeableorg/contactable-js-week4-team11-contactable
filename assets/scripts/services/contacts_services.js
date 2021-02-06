@@ -8,14 +8,14 @@ export const listContacts = () =>
     },
   });
 
-export const createContact = (name) =>
-  apiFetch(`${BASE_URL}/categories`, {
+export const createContact = (contact) =>
+  apiFetch(`${BASE_URL}/contacts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Token token=${sessionStorage.getItem("token")}`,
     },
-    body: JSON.stringify({ name }),
+    body: JSON.stringify(contact),
   });
 
 export const deleteContact = (contactId) =>

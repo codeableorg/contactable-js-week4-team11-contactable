@@ -2,7 +2,7 @@ import { showContact } from "./services/contacts_services.js";
 import STORE from "./store.js";
 
 export default function ContactDetail(contactId) {
-  let acontact = STORE.contacts[contactId]
+  let acontact = STORE.contacts[contactId-1]
   return `<header>
         <h2>Contact Detail</h2>
         <a>Logout</a>

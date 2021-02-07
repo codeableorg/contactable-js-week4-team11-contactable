@@ -1,22 +1,21 @@
-export default function ContactDetail(parentElement) {
-  return {
-    parent: document.querySelector(parentElement),
-    render: function()
-    {
-      const html = `
-      <header>
+import { showContact } from "./services/contacts_services.js";
+import STORE from "./store.js";
+
+export default function ContactDetail(contactId) {
+  let acontact = STORE.contacts[contactId]
+  return `<header>
         <h2>Contact Detail</h2>
         <a>Logout</a>
       </header>
       <section class="inputs">
         <img src="./assets/img/default.png" alt="image-contact">
-        <p class="contact__name">${contact.name}</p>
+        <p class="contact__name">${acontact.name}</p>
         <p>Friends</p>
         <div contact__detail>
         <label>Number</label>
-          <p class="contact__number">${contact.number}</p>
+          <p class="contact__number">${acontact.number}</p>
         <label>Email</label>
-          <p class="contact__email">${contact.email}</p>
+          <p class="contact__email">${acontact.email}</p>
         </div>
       </section>
       <footer>
@@ -27,7 +26,4 @@ export default function ContactDetail(parentElement) {
         </div>
       </footer>
       `;
-      this.parent.innerHTML = html;
-    },
-  };
-}
+  }

@@ -25,3 +25,11 @@ export const deleteContact = (contactId) =>
       Authorization: `Token token=${sessionStorage.getItem("token")}`,
     },
   });
+  export const showContact = (idContact) =>
+  apiFetch(`${BASE_URL}/contacts/${idContact}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem("token")}`,
+    },
+  });
+

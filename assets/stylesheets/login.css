@@ -1,0 +1,43 @@
+header {
+  margin-top: 40px;
+}
+
+section {
+  min-height: 560px;
+}
+
+section,
+header,
+footer {
+  background-color: var(--background-white);
+}
+
+.inputs input {
+  width: 68%;
+  padding: 8px 0;
+  border-width: 0 0 1px 0;
+  border-color: var(--silver);
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--nero);
+  margin: 0 0 27px 0;
+  outline: none;
+  background: var(--background-white);
+}
+
+.inputs input::placeholder {
+  color: var(--silver);
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 4px 0;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: var(--border);
+}

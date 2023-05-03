@@ -1,0 +1,43 @@
+.contact {
+  display: flex;
+  width: 320px;
+  height: 56px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 16.5px;
+  justify-content: space-between;
+}
+.contact__info {
+  display: flex;
+  align-items: center;
+}
+.contact__star {
+  text-align: right;
+}
+.contact__name {
+  margin: 0px;
+  padding-left: 32px;
+}
+
+.contact__detail {
+  display: flex;
+  padding: 8px;
+}
+
+.contact__number{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--nero);
+}
+
+.contact__email{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--nero);
+}
